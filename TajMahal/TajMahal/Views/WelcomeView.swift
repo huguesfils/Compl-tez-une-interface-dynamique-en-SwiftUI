@@ -17,6 +17,7 @@ struct WelcomeView: View {
                 MenuView()
             } label : {
                 Text("Menu")
+                Text("coucou")
             }
         }
     }
