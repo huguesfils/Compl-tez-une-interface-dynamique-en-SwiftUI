@@ -1,25 +1,41 @@
-//
-//  WelcomeView.swift
-//  TajMahal
-//
-//  Created by Amandine Cousin on 31/10/2023.
-//
-
 import SwiftUI
 
-// Page d'accueil
 struct WelcomeView: View {
     var body: some View {
         NavigationStack {
             Image("TajMahal")
+            
+            HStack() {
+                VStack(){
+                    Text("Restaurant Indien")
+                    Text("Taj Mahal")
+                }
+                Image("Logo")
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundStyle(.red)
+                    .frame(width: 100, height: 100)
+            }
+            .background(.green)
+            
             Spacer()
+            
+            
+            
             NavigationLink {
                 MenuView()
             } label : {
-                Text("Menu")
-                Text("coucou")
+                Text("Accéder au menu")
+                    .font(.jakarta(.bold, size: 16))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(10)
+                    .background(.customRed)
+                    .cornerRadius(8)
             }
+            .padding()
         }
+        
     }
 }
 
