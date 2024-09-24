@@ -13,8 +13,27 @@ struct MenuView: View {
     let viewModel: ViewModel = ViewModel()
     
     var body: some View {
-        List {
-            // À completer
+        NavigationStack {
+            List {
+                Section(header: Text("Entrées")) {
+                    ForEach(viewModel.apetizerArray) { dish in
+                        NavigationLink(destination: DishDetailView(dish: dish)) {
+                            DishCardView(dish: dish)
+                        }
+                    }
+                    .listRowSeparator(.hidden)
+                }
+                Section(header: Text("Plats Principaux")) {
+                    ForEach(viewModel.mainCourseArray) { dish in
+                        NavigationLink(destination: DishDetailView(dish: dish)) {
+                            DishCardView(dish: dish)
+                        }
+                    }
+                    .listRowSeparator(.hidden)
+                }
+            }
+            .listRowSpacing(10)
+            .navigationTitle("Menu")
         }
     }
 }
