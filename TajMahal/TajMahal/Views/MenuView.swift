@@ -1,39 +1,39 @@
-//
-//  MenuView.swift
-//  TajMahal
-//
-//  Created by Amandine Cousin on 31/10/2023.
-//
-
 import SwiftUI
 
-// Menu sous forme de liste
 struct MenuView: View {
-    // Référence vers le view model qui permet d'accéder aux tableaux d'entrées et de plats du menu
-    let viewModel: ViewModel = ViewModel()
+    @StateObject var viewModel = ViewModel()
     
+    @ViewBuilder
     var body: some View {
         NavigationStack {
-            List {
-                Section(header: Text("Entrées")) {
-                    ForEach(viewModel.apetizerArray) { dish in
-                        NavigationLink(destination: DishDetailView(dish: dish)) {
-                            DishCardView(dish: dish)
+            if viewModel.apetizers.isEmpty && viewModel.mainCourses.isEmpty {
+                Spacer()
+                
+                ProgressView("Chagement du menu...")
+                
+                Spacer()
+            } else {
+                List {
+                    Section(header: Text("Entrées")) {
+                        ForEach(viewModel.apetizers) { dish in
+                            NavigationLink(destination: DishDetailView(dish: dish)) {
+                                DishCardView(dish: dish)
+                            }
                         }
+                        .listRowSeparator(.hidden)
                     }
-                    .listRowSeparator(.hidden)
-                }
-                Section(header: Text("Plats Principaux")) {
-                    ForEach(viewModel.mainCourseArray) { dish in
-                        NavigationLink(destination: DishDetailView(dish: dish)) {
-                            DishCardView(dish: dish)
+                    Section(header: Text("Plats Principaux")) {
+                        ForEach(viewModel.mainCourses) { dish in
+                            NavigationLink(destination: DishDetailView(dish: dish)) {
+                                DishCardView(dish: dish)
+                            }
                         }
+                        .listRowSeparator(.hidden)
                     }
-                    .listRowSeparator(.hidden)
                 }
+                .listRowSpacing(10)
+                .navigationTitle("Menu")
             }
-            .listRowSpacing(10)
-            .navigationTitle("Menu")
         }
     }
 }

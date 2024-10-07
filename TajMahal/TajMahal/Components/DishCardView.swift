@@ -1,15 +1,9 @@
-//
-//  DishCardView.swift
-//  TajMahal
-//
-//  Created by Hugues Fils Caparos on 24/09/2024.
-//
-
 import SwiftUI
 
 struct DishCardView: View {
     let dish: Dish
     
+    @ViewBuilder
     var body: some View {
         HStack {
             Image(dish.imageName)

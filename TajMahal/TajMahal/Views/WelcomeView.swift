@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct WelcomeView: View {
+
     var body: some View {
         NavigationStack {
             VStack {
                 Image("TajMahal")
                     .resizable()
-                    .foregroundStyle(.logoGray)
                     .padding()
                     
                 RestaurantHeaderView()
@@ -14,15 +14,25 @@ struct WelcomeView: View {
                     .padding(.bottom, 30)
                 
                 VStack() {
-                    InfosView(image: "horaire", text: "Mardi", additionalText: "11h30 - 14h30 \u{2022} 18h30 - 22h00")
+                    InfosView(image: .hours,
+                              text: .openingDay,
+                              additionalText: .openingHours)
                     
-                    InfosView(image: "service", text: "Type de servcie", additionalText: "À emporter")
+                    InfosView(image: .service,
+                              text: .serviceType,
+                              additionalText: .takeAway)
                     
-                    InfosView(image: "localisation", text: "12  Avenue de la Brique - 75010 Paris", additionalText: "")
+                    InfosView(image: .location,
+                              text: .location,
+                              additionalText: .none)
                     
-                    InfosView(image: "site", text: "www.tajmahal.fr", additionalText: "")
+                    InfosView(image: .website,
+                              text: .website,
+                            )
                     
-                    InfosView(image: "telephone", text: "06 12 34 56 78", additionalText: "")
+                    InfosView(image: .phone,
+                              text: .phoneNumber,
+                              additionalText: .none)
                     
                 }
                 .padding(.horizontal)
