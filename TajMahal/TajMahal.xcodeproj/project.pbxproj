@@ -20,6 +20,8 @@
 		6533FA812CA173D2002E8AFA /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6533FA802CA173D2002E8AFA /* PlusJakartaSans-Regular.ttf */; };
 		6533FA832CA173D9002E8AFA /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6533FA822CA173D9002E8AFA /* PlusJakartaSans-SemiBold.ttf */; };
 		6533FA862CA17489002E8AFA /* UIFont++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6533FA852CA17489002E8AFA /* UIFont++.swift */; };
+		655B11322CB545A00067288B /* MenuListRedactedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B11312CB545A00067288B /* MenuListRedactedView.swift */; };
+		655B11342CB545CD0067288B /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B11332CB545CD0067288B /* MenuListView.swift */; };
 		65DAE0C32CA2FB2F001BF359 /* RestaurantHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DAE0C22CA2FB2F001BF359 /* RestaurantHeaderView.swift */; };
 		65DAE0C52CA2FB4E001BF359 /* InfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DAE0C42CA2FB4E001BF359 /* InfosView.swift */; };
 		65DAE0CB2CA3110E001BF359 /* DishCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DAE0CA2CA3110E001BF359 /* DishCardView.swift */; };
@@ -42,6 +44,8 @@
 		6533FA802CA173D2002E8AFA /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		6533FA822CA173D9002E8AFA /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		6533FA852CA17489002E8AFA /* UIFont++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont++.swift"; sourceTree = "<group>"; };
+		655B11312CB545A00067288B /* MenuListRedactedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListRedactedView.swift; sourceTree = "<group>"; };
+		655B11332CB545CD0067288B /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		65DAE0C22CA2FB2F001BF359 /* RestaurantHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantHeaderView.swift; sourceTree = "<group>"; };
 		65DAE0C42CA2FB4E001BF359 /* InfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosView.swift; sourceTree = "<group>"; };
 		65DAE0CA2CA3110E001BF359 /* DishCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCardView.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				42E9DCBE2AF11439007CE7D0 /* WelcomeView.swift */,
 				42E9DCC12AF117AE007CE7D0 /* MenuView.swift */,
 				65DAE0CC2CA311C9001BF359 /* DishDetailView.swift */,
+				655B11312CB545A00067288B /* MenuListRedactedView.swift */,
+				655B11332CB545CD0067288B /* MenuListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,12 +231,14 @@
 			files = (
 				6533FA862CA17489002E8AFA /* UIFont++.swift in Sources */,
 				428D2B532AFA882700BBA4F5 /* ViewModel.swift in Sources */,
+				655B11322CB545A00067288B /* MenuListRedactedView.swift in Sources */,
 				42E9DCBF2AF11439007CE7D0 /* WelcomeView.swift in Sources */,
 				65DAE0C32CA2FB2F001BF359 /* RestaurantHeaderView.swift in Sources */,
 				65DAE0C52CA2FB4E001BF359 /* InfosView.swift in Sources */,
 				65DAE0CB2CA3110E001BF359 /* DishCardView.swift in Sources */,
 				42E9DCC22AF117AE007CE7D0 /* MenuView.swift in Sources */,
 				65DAE0CD2CA311C9001BF359 /* DishDetailView.swift in Sources */,
+				655B11342CB545CD0067288B /* MenuListView.swift in Sources */,
 				42E9DCAE2AF11136007CE7D0 /* TajMahalApp.swift in Sources */,
 				428D2B512AFA851900BBA4F5 /* Model.swift in Sources */,
 			);

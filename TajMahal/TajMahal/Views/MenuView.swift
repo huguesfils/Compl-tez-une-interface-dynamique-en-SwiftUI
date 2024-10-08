@@ -1,40 +1,27 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel = ViewModel()
     
-    @ViewBuilder
     var body: some View {
         NavigationStack {
             if viewModel.apetizers.isEmpty && viewModel.mainCourses.isEmpty {
-                Spacer()
-                
-                ProgressView("Chagement du menu...")
-                
-                Spacer()
+                MenuListRedactedView()
             } else {
-                List {
-                    Section(header: Text("Entrées")) {
-                        ForEach(viewModel.apetizers) { dish in
-                            NavigationLink(destination: DishDetailView(dish: dish)) {
-                                DishCardView(dish: dish)
-                            }
-                        }
-                        .listRowSeparator(.hidden)
-                    }
-                    Section(header: Text("Plats Principaux")) {
-                        ForEach(viewModel.mainCourses) { dish in
-                            NavigationLink(destination: DishDetailView(dish: dish)) {
-                                DishCardView(dish: dish)
-                            }
-                        }
-                        .listRowSeparator(.hidden)
-                    }
-                }
-                .listRowSpacing(10)
-                .navigationTitle("Menu")
+                MenuListView(apetizers: viewModel.apetizers, mainCourses: viewModel.mainCourses)
             }
         }
+        .navigationTitle("Menu")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "chevron.left")
+                .foregroundColor(.black)
+                .imageScale(.large)
+        })
     }
 }
 

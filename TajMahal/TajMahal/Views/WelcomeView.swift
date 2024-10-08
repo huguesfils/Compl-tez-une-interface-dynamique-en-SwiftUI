@@ -28,7 +28,7 @@ struct WelcomeView: View {
                     
                     InfosView(image: .website,
                               text: .website,
-                            )
+                              additionalText: .none)
                     
                     InfosView(image: .phone,
                               text: .phoneNumber,
