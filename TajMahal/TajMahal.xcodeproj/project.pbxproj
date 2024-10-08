@@ -138,8 +138,6 @@
 				42E9DCBE2AF11439007CE7D0 /* WelcomeView.swift */,
 				42E9DCC12AF117AE007CE7D0 /* MenuView.swift */,
 				65DAE0CC2CA311C9001BF359 /* DishDetailView.swift */,
-				655B11312CB545A00067288B /* MenuListRedactedView.swift */,
-				655B11332CB545CD0067288B /* MenuListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +147,8 @@
 			children = (
 				65DAE0C22CA2FB2F001BF359 /* RestaurantHeaderView.swift */,
 				65DAE0C42CA2FB4E001BF359 /* InfosView.swift */,
+				655B11312CB545A00067288B /* MenuListRedactedView.swift */,
+				655B11332CB545CD0067288B /* MenuListView.swift */,
 				65DAE0CA2CA3110E001BF359 /* DishCardView.swift */,
 			);
 			path = Components;

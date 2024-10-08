@@ -56,5 +56,5 @@ struct DishDetailView: View {
 }
 
 #Preview {
-    DishDetailView(dish: Dish(name: "test", description: "test", allergens: "test", ingredients: "test", spiceLevel: .hot, imageName: "test"))
+    DishDetailView(dish: Dish(name: "test", description: "test", allergens: "test", ingredients: "test", spiceLevel: .hot, imageName: "test", price: "6,00"))
 }

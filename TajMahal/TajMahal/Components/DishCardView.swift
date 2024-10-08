@@ -8,26 +8,57 @@ struct DishCardView: View {
         HStack {
             Image(dish.imageName)
                 .resizable()
-                .frame(width: 60, height: 60)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 112, height: 86, alignment: .center)
                 .cornerRadius(8)
                 .padding(.trailing, 10)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 15) {
                 Text(dish.name)
-                    .font(.headline)
+                    .font(.jakarta(.semiBold, size: 14))
+                    .foregroundStyle(.textGray)
                 Text(dish.description)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .font(.jakarta(.regular, size: 12))
+                    .foregroundStyle(.textGray)
+                
+                HStack {
+                    Text(dish.price + "€")
+                        .font(.jakarta(.semiBold, size: 12))
+                        .foregroundStyle(.textGray)
+                    
+                    Spacer()
+                    
+                    spiceLevelView(for: dish.spiceLevel)
+                }
             }
-            
-            Spacer()
         }
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .cornerRadius(10)
     }
+    
+    private func spiceLevelView(for level: SpiceLevel) -> some View {
+        let maxSpiceLevel = 3
+        let currentSpiceLevel: Int
+        
+        switch level {
+        case .light:
+            currentSpiceLevel = 1
+        case .medium:
+            currentSpiceLevel = 2
+        case .hot:
+            currentSpiceLevel = maxSpiceLevel
+        }
+        
+        return HStack(spacing: 5) {
+            ForEach(0..<maxSpiceLevel, id: \.self) { index in
+                Image("Piment")
+                    .foregroundStyle(index < currentSpiceLevel ? .customRed : .lightGray)
+            }
+        }
+    }
 }
 
 #Preview {
-    DishCardView(dish: Dish(name: "Aloo", description: "test", allergens: "test", ingredients: "test", spiceLevel: .light, imageName: "Aloo"))
-        
+    DishCardView(dish: Dish(name: "Aloo", description: "test", allergens: "test", ingredients: "test", spiceLevel: .light, imageName: "Aloo", price: "5,50"))
+    
 }
