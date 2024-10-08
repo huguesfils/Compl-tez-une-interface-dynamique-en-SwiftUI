@@ -18,7 +18,7 @@ struct MenuView: View {
         .navigationBarItems(leading: Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }) {
-            Image(systemName: "chevron.left")
+            Image("backButton")
                 .foregroundColor(.black)
                 .imageScale(.large)
         })

@@ -52,7 +52,7 @@ struct DishCardView: View {
         return HStack(spacing: 5) {
             ForEach(0..<maxSpiceLevel, id: \.self) { index in
                 Image("Piment")
-                    .foregroundStyle(index < currentSpiceLevel ? .customRed : .lightGray)
+                    .foregroundStyle(index < currentSpiceLevel ? .customRed : .customLightGray)
             }
         }
     }
