@@ -8,6 +8,7 @@ struct DishDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
+                
                 ZStack(alignment: .topTrailing) {
                     Image(dish.imageName)
                         .resizable()
@@ -16,36 +17,20 @@ struct DishDetailView: View {
                         .clipped()
                         .cornerRadius(10)
                         .padding()
-                    spiceLevelView(for: dish.spiceLevel)
+                    spiceLevelView(for: dish.spiceLevel, hasPadding: true)
                         .padding(.trailing, 30)
                         .padding(.top, 30)
-                    
                 }
                 
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Allergènes:")
-                        .font(.jakarta(.semiBold, size: 12))
-                        .foregroundStyle(.textGray)
-                    
-                    Text(dish.allergens)
-                        .font(.jakarta(.regular, size: 12))
-                        .foregroundStyle(.textGray)
-                }
+                DishDetailTextView(title: .allergens, dish: dish)
                 .padding()
                 
                 Divider()
                     .padding(.horizontal)
                 
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Ingrédients:")
-                        .font(.jakarta(.semiBold, size: 12))
-                        .foregroundStyle(.textGray)
-                    
-                    Text(dish.ingredients)
-                        .font(.jakarta(.regular, size: 12))
-                        .foregroundStyle(.textGray)
-                }
+                DishDetailTextView(title: .ingredients, dish: dish)
                 .padding()
+                
             }
             .navigationTitle("")
             .toolbar {
@@ -63,31 +48,6 @@ struct DishDetailView: View {
                     .imageScale(.large)
             })
         }
-    }
-    
-    private func spiceLevelView(for level: SpiceLevel) -> some View {
-        let maxSpiceLevel = 3
-        let currentSpiceLevel: Int
-        
-        switch level {
-        case .light:
-            currentSpiceLevel = 1
-        case .medium:
-            currentSpiceLevel = 2
-        case .hot:
-            currentSpiceLevel = maxSpiceLevel
-        }
-        
-        return HStack(spacing: 6) {
-            ForEach(0..<maxSpiceLevel, id: \.self) { index in
-                Image("Piment")
-                    .foregroundStyle(index < currentSpiceLevel ? .customRed : .customLightGray)
-            }
-        }
-        .padding(.vertical, 6)
-        .padding(.horizontal, 10)
-        .background(Color.white)
-        .cornerRadius(25)
     }
 }
 

@@ -1,17 +1,18 @@
 import SwiftUI
 
 struct InfosView: View {
-    let image: RestaurantInfo.Icons
-    let text: RestaurantInfo.InfoText
-    let additionalText: RestaurantInfo.AdditionalInfo?
+    let info: RestaurantInfo
     
     var body: some View {
         HStack {
-            Image(image.rawValue)
-            Text(text.rawValue)
+            Image(info.leftContent.iconName)
+            Text(info.leftContent.text)
+            
             Spacer()
-            //if let
-            Text(additionalText?.rawValue ?? "")
+            
+            if let rightText = info.rightContent {
+                Text(rightText)
+            }
         }
         .font(.jakarta(.semiBold, size: 13))
         .foregroundStyle(.textGray)
@@ -20,8 +21,6 @@ struct InfosView: View {
 }
 
 #Preview {
-    InfosView(image: .hours, text: .openingDay, additionalText: .openingHours)
-        .padding()
+    InfosView(info: .hours)
+            .padding()
 }
-
-//TODO: 1 seule enum, left content, right content + image 

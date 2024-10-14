@@ -14,26 +14,10 @@ struct WelcomeView: View {
                     .padding(.bottom, 30)
                 
                 VStack() {
-                    InfosView(image: .hours,
-                              text: .openingDay,
-                              additionalText: .openingHours)
-                    
-                    InfosView(image: .service,
-                              text: .serviceType,
-                              additionalText: .takeAway)
-                    
-                    InfosView(image: .location,
-                              text: .location,
-                              additionalText: .none)
-                    
-                    InfosView(image: .website,
-                              text: .website,
-                              additionalText: .none)
-                    
-                    InfosView(image: .phone,
-                              text: .phoneNumber,
-                              additionalText: .none)
-                    
+                    InfosView(info: .hours)
+                    InfosView(info: .service)
+                    InfosView(info: .website)
+                    InfosView(info: .phone)
                 }
                 .padding(.horizontal)
 

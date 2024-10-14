@@ -26,6 +26,7 @@
 		65DAE0C52CA2FB4E001BF359 /* InfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DAE0C42CA2FB4E001BF359 /* InfosView.swift */; };
 		65DAE0CB2CA3110E001BF359 /* DishCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DAE0CA2CA3110E001BF359 /* DishCardView.swift */; };
 		65DAE0CD2CA311C9001BF359 /* DishDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DAE0CC2CA311C9001BF359 /* DishDetailView.swift */; };
+		65E777E42CBD2980006EC073 /* DishDetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E777E32CBD2980006EC073 /* DishDetailTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		65DAE0C42CA2FB4E001BF359 /* InfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosView.swift; sourceTree = "<group>"; };
 		65DAE0CA2CA3110E001BF359 /* DishCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCardView.swift; sourceTree = "<group>"; };
 		65DAE0CC2CA311C9001BF359 /* DishDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailView.swift; sourceTree = "<group>"; };
+		65E777E32CBD2980006EC073 /* DishDetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				655B11312CB545A00067288B /* MenuListRedactedView.swift */,
 				655B11332CB545CD0067288B /* MenuListView.swift */,
 				65DAE0CA2CA3110E001BF359 /* DishCardView.swift */,
+				65E777E32CBD2980006EC073 /* DishDetailTextView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				655B11342CB545CD0067288B /* MenuListView.swift in Sources */,
 				42E9DCAE2AF11136007CE7D0 /* TajMahalApp.swift in Sources */,
 				428D2B512AFA851900BBA4F5 /* Model.swift in Sources */,
+				65E777E42CBD2980006EC073 /* DishDetailTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

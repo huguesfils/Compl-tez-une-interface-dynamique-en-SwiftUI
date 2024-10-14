@@ -28,37 +28,17 @@ struct DishCardView: View {
                     
                     Spacer()
                     
-                    spiceLevelView(for: dish.spiceLevel)
+                    spiceLevelView(for: dish.spiceLevel, hasPadding: false)
                 }
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .cornerRadius(10)
     }
-    
-    private func spiceLevelView(for level: SpiceLevel) -> some View {
-        let maxSpiceLevel = 3
-        let currentSpiceLevel: Int
-        
-        switch level {
-        case .light:
-            currentSpiceLevel = 1
-        case .medium:
-            currentSpiceLevel = 2
-        case .hot:
-            currentSpiceLevel = maxSpiceLevel
-        }
-        
-        return HStack(spacing: 5) {
-            ForEach(0..<maxSpiceLevel, id: \.self) { index in
-                Image("Piment")
-                    .foregroundStyle(index < currentSpiceLevel ? .customRed : .customLightGray)
-            }
-        }
-    }
 }
 
 #Preview {
     DishCardView(dish: Dish(name: "Aloo", description: "test", allergens: "test", ingredients: "test", spiceLevel: .light, imageName: "Aloo", price: "5,50"))
+        .padding()
     
 }
