@@ -55,34 +55,18 @@ enum RestaurantInfo {
 }
 
 //MARK: - DishDetails
-enum DishDetailsTitle: String {
-    case allergens = "Allergènes:"
-    case ingredients = "Ingrédients:"
-}
-
-//MARK: - SpiceLevelFunc
-func spiceLevelView(for level: SpiceLevel, hasPadding: Bool) -> some View {
-    let maxSpiceLevel = 3
-    let currentSpiceLevel: Int
+enum DishDetailsSection {
     
-    switch level {
-    case .light:
-        currentSpiceLevel = 1
-    case .medium:
-        currentSpiceLevel = 2
-    case .hot:
-        currentSpiceLevel = maxSpiceLevel
-    }
+    case allergens
+    case ingredients
     
-    return HStack(spacing: 5) {
-        ForEach(0..<maxSpiceLevel, id: \.self) { index in
-            Image("Piment")
-                .foregroundStyle(index < currentSpiceLevel ? .customRed : .customLightGray)
+    var title: String {
+        switch self {
+        case .allergens:
+            return "Allergènes"
+        case .ingredients:
+            return "Ingrédients"
+            
         }
     }
-    .padding(.vertical, hasPadding ? 6 : 0)
-    .padding(.horizontal, hasPadding ? 10 : 0)
-    .background(hasPadding ? Color.white : Color.clear)
-    .cornerRadius(hasPadding ? 25 : 0)
 }
-

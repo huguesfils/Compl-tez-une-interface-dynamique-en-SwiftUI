@@ -13,7 +13,6 @@ struct MenuListView: View {
                             EmptyView()
                         }
                         .opacity(0.0)
-                        .buttonStyle(PlainButtonStyle())
                         DishCardView(dish: dish)
                     }
                 }
@@ -26,7 +25,6 @@ struct MenuListView: View {
                             EmptyView()
                         }
                         .opacity(0.0)
-                        .buttonStyle(PlainButtonStyle())
                         DishCardView(dish: dish)
                     }
                 }

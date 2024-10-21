@@ -1,9 +1,3 @@
-//
-//  UIFont++.swift
-//  TajMahal
-//
-//  Created by Hugues Fils Caparos on 23/09/2024.
-//
 import SwiftUI
 
 extension Font {

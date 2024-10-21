@@ -28,7 +28,7 @@ struct DishCardView: View {
                     
                     Spacer()
                     
-                    spiceLevelView(for: dish.spiceLevel, hasPadding: false)
+                    SpiceLevelView(level: dish.spiceLevel, hasPadding: false)
                 }
             }
         }

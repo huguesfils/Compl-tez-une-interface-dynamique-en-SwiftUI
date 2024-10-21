@@ -4,15 +4,15 @@ import UIKit
 @main
 struct TajMahalApp: App {
     init() {
-        let appear = UINavigationBarAppearance()
+        let navigationBarAppearance = UINavigationBarAppearance()
 
-        let atters: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "PlusJakartaSans-bold", size: 16)!
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: Font.Jakarta.bold.rawValue, size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .bold)
         ]
 
-        appear.largeTitleTextAttributes = atters
-        appear.titleTextAttributes = atters
-        UINavigationBar.appearance().standardAppearance = appear
+        navigationBarAppearance.largeTitleTextAttributes = attributes
+        navigationBarAppearance.titleTextAttributes = attributes
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
      }
     
     var body: some Scene {

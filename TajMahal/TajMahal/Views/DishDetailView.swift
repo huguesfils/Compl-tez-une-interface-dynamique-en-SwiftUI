@@ -12,23 +12,21 @@ struct DishDetailView: View {
                 ZStack(alignment: .topTrailing) {
                     Image(dish.imageName)
                         .resizable()
-                        .scaledToFill()
-                        .frame(maxWidth: .infinity, maxHeight: 467)
-                        .clipped()
+                        .scaledToFit()
                         .cornerRadius(10)
                         .padding()
-                    spiceLevelView(for: dish.spiceLevel, hasPadding: true)
+                    SpiceLevelView(level: dish.spiceLevel, hasPadding: true)
                         .padding(.trailing, 30)
                         .padding(.top, 30)
                 }
                 
-                DishDetailTextView(title: .allergens, dish: dish)
+                DishDetailTextView(section: .allergens, dish: dish)
                 .padding()
                 
                 Divider()
                     .padding(.horizontal)
                 
-                DishDetailTextView(title: .ingredients, dish: dish)
+                DishDetailTextView(section: .ingredients, dish: dish)
                 .padding()
                 
             }
